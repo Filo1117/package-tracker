@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Your Package</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input { padding: 10px; width: 250px; }
+    button { padding: 10px 20px; }
+    #result { margin-top: 30px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>Track Your Package</h2>
+  <input type="text" id="trackingNumber" placeholder="Enter your tracking number">
+  <button onclick="track()">Track</button>
+
+  <div id="result"></div>
+
+  <script>
+    function track() {
+      const tn = document.getElementById("trackingNumber").value;
+      let status = "Tracking number not found.";
+
+      if (tn === "123456") {
+        status = "Package picked up – April 29";
+      } else if (tn === "789012") {
+        status = "In transit – Expected delivery May 1";
+      } else if (tn === "345678") {
+        status = "Delivered – April 28";
+      }
+
+      document.getElementById("result").innerText = status;
+    }
+  </script>
+</body>
+</html>
