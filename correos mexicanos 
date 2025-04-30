@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seguimiento de Paquetes | Correos Mexicanos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #a01b1b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .tracking-form input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+    }
+    .tracking-form button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #a01b1b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .tracking-form button:hover {
+      background-color: #841616;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Correos Mexicanos</h1>
+    <p>Seguimiento de Envíos Internacionales</p>
+  </div>
+
+  <div class="container">
+    <form class="tracking-form" onsubmit="trackPackage(event)">
+      <label for="trackingNumber">Número de Rastreo:</label><br><br>
+      <input type="text" id="trackingNumber" placeholder="Ej: CM123456789MX" required>
+      <button type="submit">Rastrear</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function trackPackage(event) {
+      event.preventDefault();
+      const trackingNumber = document.getElementById('trackingNumber').value;
+
+      // Simulated result - Replace with API call if available
+      document.getElementById('result').innerHTML =
+        `El paquete con número <strong>${trackingNumber}</strong> está en tránsito hacia su destino.`;
+    }
+  </script>
+
+</body>
+</html>
